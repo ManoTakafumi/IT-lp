@@ -1,12 +1,13 @@
 # IT企業コーポレートサイト（ポートフォリオ）
 
-架空のIT企業を想定したコーポレートサイトです。
 企業情報をわかりやすく伝えることを目的として制作しました。
+架空のIT企業「Mano Tech Solutions」のコーポレートサイトです。
 
 ---
 
 ## URL
 
+https://github.com/ManoTakafumi/IT-lp
 
 ---
 
@@ -30,8 +31,8 @@
 ---
 
 ## 使用技術
-- HTML
-- CSS
+- HTML(構造設計)
+- CSS(レイアウト・デザイン)
 - JavaScript(Hamburger menu,Header)
 - Git/GitHub
 
