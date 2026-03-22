@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Mano Tech Solutions</title>
+    <link rel="stylesheet" href="../css/destyle.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+<body class="about">
+    <header id="header">
+        <div class="logo">
+            <a href="./home.html"><img src="../image/logo.jpg"></a>
+        </div>
+
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="home.html" class="nav_item">Home</a></li>
+                <li><a href="#service" class="nav_item">Service</a></li>
+                <li><a href="about.html" class="nav_item">About</a></li>
+                <li><a href="#contact" class="nav_item">Contact</a></li>
+            </ul>
+        </nav>
+
+         <button class="hamburger" id="js-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+         </button>
+    </header>
+
+    <main id="main">
+        <div class="main_inner">
+            <h1 class="main_logo">
+                中小企業の業務を理解し、<br>
+                本当に使えるITをつくる
+            </h1>
+
+            <a class="btn_primary" href="contact.html">
+                まずは無料で相談してみる
+            </a>
+        </div>
+    </main>
+
+    <section id="about">
+        <h2>私たちについて</h2>
+        <p>
+            Mano Tech Solutionsは、中小企業向けに
+            ITサポート・システム開発・Web制作を行っています。
+        </p>
+
+        <p>
+            「ITの何から相談すればいいかわからない」
+            そんな状態からでも安心してご相談いただけるよう、
+            業務内容や課題を丁寧にヒアリングすることを大切にしています。
+        </p>
+
+        <p>
+            必要以上に複雑なシステムを作らず、
+            運用しやすく、長く使える仕組みを目指しています。
+        </p>
+    </section>
+
+    <section id="vision">
+        <h2>理念・方針</h2>
+        <p>
+            ITは導入することが目的ではなく、
+            日々の業務を少しでも楽にするための手段だと考えています。
+        </p>
+        <p>
+            「作って終わり」ではなく、
+            実際に使い続けられるかどうかを重視し、
+            無駄のない設計と、継続的なサポートを大切にしています。</p>
+    </section>
+
+    <footer id="footer">
+        <p><a href="">会社名</a><a href="">事業内容</a><a>お問い合わせ</a>&copy Mano Tech Solutions</p>
+    </footer>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        const hamburger = document.getElementById('js-hamburger');
+        const nav = document.querySelector('nav');
+        const overlay = document.getElementById('overlay');
+        const navLinks = nav.querySelectorAll('a');
+
+        function closeMenu() {
+            hamburger.classList.remove('is-active');
+            nav.classList.remove('is-active');
+            overlay.classList.remove('is-active');
+        }
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+            overlay.classList.toggle('is-active');
+        });
+
+        overlay.addEventListener('click', closeMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('is-small');
+            } else {
+                header.classList.remove('is-small');
+            }
+        })
+    </script>
+</body>
+</html>

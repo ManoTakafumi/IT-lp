@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Solutions</title>
+    <link rel="stylesheet" href="../css/destyle.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="./home.html"><img src="../image/logo.jpg"></a>
+        </div>
+
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="./home.html" class="nav_item">Home</a></li>
+                <li><a href="#service" class="nav_item">Service</a></li>
+                <li><a href="about.html" class="nav_item">About</a></li>
+                <li><a href="#contact" class="nav_item">Contact</a></li>
+            </ul>
+        </nav>
+
+         <button class="hamburger" id="js-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+         </button>
+    </header>
+    <main id="main">
+        <div class="main_inner">
+            <h1 class="main_logo">ITで、業務をもっと効率的に<br>
+                中小企業向け<br>ITサポート・システム開発
+            </h1>
+
+            <a class="contact" href="#contact">お問い合わせはこちら</a>
+        </div>
+    </main>
+    <section id="service">
+        <h2>サービス</h2>
+
+        <div class="service_wrapper">
+            <article class="service_item">
+                <h3>システム開発</h3>
+                <p>業務内容や運用を丁寧にヒアリングし、
+                    必要な機能を実装したシンプルなシステムを開発します。
+                </p>
+            </article>
+
+            <article class="service_item">
+                <h3>業務自動化</h3>
+                <p>Excel作業や入力作業など、
+                時間と手間のかかかる業務を自動化します。</p>
+            </article>
+
+            <article class="service_item">
+                <h3>Web制作</h3>
+                <p>企業のターゲットを意識し、
+                見やすく・使いやすいWebサイトを制作します。</p>
+            </article>
+        </div>
+
+    </section>
+
+    <section id="strength">
+        <h2>私たちの強み</h2>
+
+        <div class="strength_item">
+            <strong>要件から対応</strong>
+            <p>
+                ヒアリングを通じて、課題を整理し、
+                本当に必要な機能を明確にします。
+            </p>
+        </div>
+
+        <div class="strength_item">
+            <strong>無駄のない設計</strong>
+            <p>
+                必要以上に複雑な構成は避け、
+                運用しやすい設計を重視しています。
+            </p>
+        </div>
+
+        <div class="strength_item">
+            <strong>継続サポート</strong>
+            <p>
+                納品後も相談しやすい体制を整えています。
+            </p>
+        </div>
+    </section>
+
+    <section id="flow">
+
+        <h2>導入の流れ</h2>
+
+        <ol class="flow_list">
+            <li>お問い合わせ</li>
+            <li>ヒアリング</li>
+            <li>提案</li>
+            <li>開発</li>
+            <li>納品</li>
+        </ol>
+    </section>
+
+    <section id="news">
+
+        <h2>お知らせ</h2>
+
+        <table class="news_table">
+            <tr><th>2026.02</th>
+                <td>Mano Tech Solutions Webサイトを公開しました。</td></tr>
+
+            <tr><th>2026.02</th>
+                <td>中小企業向けITサポートサービスを開始しました。</td></tr>
+
+            <tr><th>2025.12</th>
+                <td>業務効率化支援の取り組みを開始しました。</td></tr>
+        </table>
+
+        
+    </section>
+
+    <footer id="footer">
+        <p><a href="">会社名</a><a href="">事業内容</a><a>お問い合わせ</a>&copy Mano Tech Solutions</p>
+    </footer>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        const hamburger = document.getElementById('js-hamburger');
+        const nav = document.querySelector('nav');
+        const overlay = document.getElementById('overlay');
+        const navLinks = nav.querySelectorAll('a');
+
+        function closeMenu() {
+            hamburger.classList.remove('is-active');
+            nav.classList.remove('is-active');
+            overlay.classList.remove('is-active');
+        }
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+            overlay.classList.toggle('is-active');
+        });
+
+        overlay.addEventListener('click', closeMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('is-small');
+            } else {
+                header.classList.remove('is-small');
+            }
+        })
+    </script>
+</body>
+</html>
